@@ -1,5 +1,4 @@
 // import { showTheTime } from "./showTheTime";
-import "./style.css"
 const button = document.createElement("button")
 button.textContent = 'click';
 
