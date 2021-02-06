@@ -1,5 +1,6 @@
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.js"),
@@ -12,7 +13,7 @@ module.exports = {
         test: /\.js$/,
         loader: "babel-loader",
         exclude: /node_modules/
-      }
+      },
     ]
   },
   optimization: {
@@ -31,7 +32,8 @@ module.exports = {
       </body>
       </html>
   `,
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   devServer: {
     port: 3000,
